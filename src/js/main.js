@@ -41,6 +41,10 @@ window.addEventListener('load', () => {
   // Update cursor blob position on mousemove
   window.addEventListener('mousemove', (event) => {
     mm.add('(hover: hover) and (pointer: fine) and (min-width: 1024px)', () => {
+      if (!cursor.classList.contains('cursor--active')) {
+        cursor.classList.add('cursor--active');
+      }
+
       gsap.to(cursorBlob, {
         x: event.clientX - 250,
         y: event.clientY - 250,
